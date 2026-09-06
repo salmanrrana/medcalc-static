@@ -2,6 +2,12 @@
 
 A simple vanilla HTML/CSS/JavaScript version of MedCalc for easy deployment.
 
+Run `npm install` once, then `npm run check:fast` for ESLint, formatting hygiene,
+and focused date-boundary tests. Installation enables the tracked pre-commit
+hook, which also checks supported staged source with Prettier.
+`utils.js` keeps its existing hand formatting for now so the date-validation fix
+does not become a whole-file style rewrite.
+
 ## Files
 
 - `index.html` - Home page with feature cards
