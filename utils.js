@@ -64,10 +64,10 @@ function formatDateForInput(date) {
  * @returns {Date|null} The parsed date or null if invalid
  */
 function parseDate(dateString) {
-  if (!dateString) return null;
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(dateString)) return null;
   try {
     const date = new Date(dateString + 'T00:00:00Z');
-    if (isNaN(date.getTime())) {
+    if (isNaN(date.getTime()) || date.toISOString().slice(0, 10) !== dateString) {
       return null;
     }
     return date;
